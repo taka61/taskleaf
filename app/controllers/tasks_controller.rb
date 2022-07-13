@@ -1,5 +1,4 @@
-class TasksController < ApplicationController
-  
+class TasksController < ApplicationController 
   def new
     @task = Task.new
   end
