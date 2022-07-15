@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2022_07_15_021751) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id", null: false
-    t.index ["users_id"], name: "index_tasks_on_users_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
