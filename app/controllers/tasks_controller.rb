@@ -27,8 +27,12 @@ class TasksController < ApplicationController
 
   def update
     task = current_user.tasks.find(params[:id])
-    task.update!(task_params)
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を更新しました。"
+
+    if task.update(task_params)
+      redirect_to tasks_url, notice: "タスク「#{task.name}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
